@@ -11,9 +11,8 @@ node {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-   stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
+   stage('deployment') {
+      bat 'copy target\\homeloan-1.0-SNAPSHOT.war  C:\\Users\\sudhakar\\Downloads\\apache-tomcat-7.0.92-windows-x64\\apache-tomcat-7.0.92\\webapps\\'
    }
   stage('email-notification') {
     mail bcc: '', body: 'Test jenkins pipeline', cc: '', from: '', replyTo: '', subject: 'CI-JENKINS', to: 'devops.training007@gmail.com'
