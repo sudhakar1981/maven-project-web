@@ -15,5 +15,8 @@ node {
       sh /opt/tomcat/apache-tomcat-7.0.92/bin/startup.sh*
       sleep 6'''
    }
+   stage('Build') {
+         mail bcc: '', body: '$DEFAULT_CONTENT', cc: '', from: '', replyTo: '', subject: '${JOB_NAME}- ${BUILD_ID} - ${BUILD_STATUS}', to: 'soundraya7@gmail.com'
+      } 
   
 }
