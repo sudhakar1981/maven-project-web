@@ -1,17 +1,12 @@
 node {
 	
-	stage('Clone')
-	    checkout poll: false, scm: [$class: 'GitSCM', branches: [[name: 'apps']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: 'advanceSettings/']]]], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sudhakar1981/maven-project-web.git']]]
-	    jdk = tool name: 'jdk8'
-        env.JAVA_HOME = "${jdk}"
-        echo "jdk installation path is: ${jdk}"
-        sh "${jdk}/bin/java -version"
-        sh '$JAVA_HOME/bin/java -version'
-	
+	stage('Clone') {
+	    git url: 'https://github.com/sudhakar1981/maven-project-web.git'
+	}
 	stage('Build')
 	    {
                 
-        sh " mvn -f advanceSettings/trunk/ clean install -U -Dwagon.skip=true"
+     buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean install'
                 
         }
 	stage('SonarQube analysis') {
