@@ -29,6 +29,14 @@
 	</profiles>  
 	
 	<distributionManagement>
+		<repository>
+		<id>nexus-repository</id>
+		<url>http://localhost:8081/nexus/snapshot</url>
+		</repository>
+	</distributionManagement>
+
+<!--
+	<distributionManagement>
     <repository>
         <id>central</id>
         <name>MQDEVAPP-releases</name>
@@ -40,5 +48,6 @@
         <url>http://localhost:8081/artifactory/my-repo</url>
     </snapshotRepository>
 </distributionManagement>
+-->
 
 </project>
