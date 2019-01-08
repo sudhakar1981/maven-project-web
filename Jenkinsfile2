@@ -5,7 +5,7 @@ node {
       mvnHome = tool 'Maven-3.3.9'
    }
    stage('Build') {
-      if (isUnix()) {
+      if (isUbuntu()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
