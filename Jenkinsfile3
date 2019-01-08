@@ -15,5 +15,7 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
-  
+  stage('email-notification') {
+    mail bcc: '', body: 'Test jenkins pipeline', cc: '', from: '', replyTo: '', subject: 'CI-JENKINS', to: 'devops.training007@gmail.com'
+   }
 }
