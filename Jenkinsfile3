@@ -6,7 +6,7 @@ node {
 	stage('Build')
 	    {
                 
-     buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean install'
+     buildInfo = rtMaven.run pom: 'maven-project-web/pom.xml', goals: 'clean install'
                 
         }
 	stage('SonarQube analysis') {
