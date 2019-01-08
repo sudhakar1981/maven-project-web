@@ -11,5 +11,10 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
+   stage('tomcat deploy') {
+      sh '''cp $WORKSPACE/target/*.war /opt/tomcat/apache-tomcat-7.0.92/webapps
+      sh /opt/tomcat/apache-tomcat-7.0.92/bin/shutdown.sh*
+      sh /opt/tomcat/apache-tomcat-7.0.92/bin/startup.sh*'''
+   }
   
 }
