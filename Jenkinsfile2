@@ -8,9 +8,10 @@ node {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
       } 
    stage('Results') {
-      sh '''cp $WORKSPACE/target/*.war /opt/tomcat/apache-tomcat-7.0.92/webapps
+      sh '''cp -rf $WORKSPACE/target/*.war /opt/tomcat/apache-tomcat-7.0.92/webapps
       sh /opt/tomcat/apache-tomcat-7.0.92/bin/shutdown.sh*
       sleep 5
+      rm -rf  /opt/tomcat/apache-tomcat-7.0.92/webapps/*.war
       sh /opt/tomcat/apache-tomcat-7.0.92/bin/startup.sh*'''
    }
   
