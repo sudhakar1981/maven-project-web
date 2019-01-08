@@ -6,7 +6,7 @@ node {
     def buildInfo
 
     stage('Clone sources') {
-        git url: 'https://github.com/jfrogdev/project-examples.git'
+        git url: 'https://github.com/sudhakar1981/maven-project-web.git'
     }
 
     stage('Artifactory configuration') {
@@ -18,7 +18,7 @@ node {
     }
 
     stage('Maven build') {
-        buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean install'
+        buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean deploy'
     }
 
     stage('Publish build info') {
