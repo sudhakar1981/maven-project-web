@@ -15,6 +15,6 @@ node {
        bat 'copy target\\homeloan-1.0-SNAPSHOT.war  C:\\Users\\sudhakar\\Downloads\\apache-tomcat-7.0.92-windows-x64\\apache-tomcat-7.0.92\\webapps\\'
    }
   stage('email-notification') {
-    mail bcc: '', body: 'Test jenkins pipeline', cc: '', from: '', replyTo: '', subject: 'CI-JENKINS', to: 'devops.training007@gmail.com'
+    mail bcc: '', body: 'Test jenkins pipeline', cc: '', from: '', replyTo: '', subject: 'CI-JENKINS', to: 'ssrya7@gmail.com'
    }
 }
