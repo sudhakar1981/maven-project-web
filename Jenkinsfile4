@@ -9,6 +9,9 @@ pipeline{
 			steps{
 				echo 'Fetching Source Code management from GITHUB'
 				sh 'sleep 10'
+				triggers {
+ 				 cron 'H/2 * * * *'
+				}
 			}
 		}
 		
