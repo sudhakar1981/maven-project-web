@@ -8,6 +8,7 @@ pipeline{
 		stage ("scm-fetch") {
 			steps{
 				echo 'Fetching Source Code management from GITHUB'
+				mvn 'package'
 			}
 		}
 		
