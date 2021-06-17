@@ -25,4 +25,11 @@ pipeline{
 			}
 		}
 	}
+	stage ("SonarQube") {
+			steps{
+				echo 'sonarqube'
+			
+			}
+		}
+	}
 }
