@@ -16,7 +16,7 @@ pipeline{
 				}
 			}
 		
-		stage ("Sonarqube-integration"){
+		stag ("Sonarqube-integration"){
 			steps{
 				echo "This is stage-3"
 				}
