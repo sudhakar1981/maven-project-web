@@ -1,0 +1,26 @@
+pipeline{
+	agent any
+	
+	stages{
+		stage ("source-code"){
+			steps{
+				echo "My first scripted pipelines"
+				echo "This is stage-1"
+				}
+			}
+			
+				
+		stage ("maven-goal"){
+			steps{
+				echo "This is stage-2"
+				}
+			}
+		
+		stage ("Sonarqube-integration"){
+			steps{
+				echo "This is stage-3"
+				}
+			}
+	}
+}
+	
