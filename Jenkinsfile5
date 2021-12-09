@@ -6,6 +6,7 @@ pipeline{
 			steps{
 				echo "My first scripted pipelines"
 				echo "This is stage-1"
+				git 'https://github.com/sudhakar1981/maven-project-web.git'
 				}
 			}
 			
