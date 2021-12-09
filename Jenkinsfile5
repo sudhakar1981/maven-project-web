@@ -2,7 +2,7 @@ pipeline{
 	agent any
 	
 	stages{
-		stage ("source-code"){
+		stage ("source-code  (STAGE-1)"){
 			steps{
 				echo "My first scripted pipelines"
 				echo "This is stage-1"
@@ -10,13 +10,13 @@ pipeline{
 			}
 			
 				
-		stage ("maven-goal"){
+		stage ("maven-goal - (STAGE-2)"){
 			steps{
 				echo "This is stage-2"
 				}
 			}
 		
-		stage ("Sonarqube-integration"){
+		stage ("Sonarqube-integration - (STAGE-3)"){
 			steps{
 				echo "This is stage-3"
 				}
